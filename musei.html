@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musei</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./json/musei/musei.js"></script>
+    <style>
+      .header-section {
+        background-image: url("img/header.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+      }
+      .navbar {
+        background-color: #9b5540 !important;
+      }
+      .musei {
+        background-image: url("img/musei.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+      }
+      .siti {
+        background-image: url("img/siti.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+      }
+      .siti:hover {
+        background-image: url("img/siti.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0.5;
+        margin: 20px;
+      }
+      .musei:hover {
+        background-image: url("img/musei.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0.5;
+        margin: 20px;
+      }
+      /* media query */
+      @media (max-width: 768px) {
+        .header-section {
+          background-image: url("img/header.jpeg");
+          background-size: cover;
+          background-position: center;
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-section text-white">
+      <div class="container"></div>
+    </header>
+    <nav class="navbar navbar-expand-lg bg-secondary">
+      <div class="container">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./progetto">Progetto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./cronologia">Cronologia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./paleolitico">Il paleolitico in Italia</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+            <label for="filter-regione">Filtra per regione</label>
+            <select id="filter-regione" class="form-control">
+              <option value="all">Tutti</option>
+              <option value="abruzzo">Abruzzo</option>
+              <option value="basilicata">Basilicata</option>
+              <option value="calabria">Calabria</option>
+              <option value="campania">Campania</option>
+              <option value="emilia">Emilia-Romagna</option>
+              <option value="friuli">Friuli-Venezia Giulia</option>
+              <option value="lazio">Lazio</option>
+              <option value="liguria">Liguria</option>
+              <option value="lombardia">Lombardia</option>
+              <option value="marche">Marche</option>
+              <option value="molise">Molise</option>
+              <option value="piemonte">Piemonte</option>
+              <option value="puglia">Puglia</option>
+              <option value="sardegna">Sardegna</option>
+              <option value="sicilia">Sicilia</option>
+              <option value="toscana">Toscana</option>
+              <option value="trentino">Trentino-Alto Adige</option>
+              <option value="umbria">Umbria</option>
+              <option value="veneto">Veneto</option>
+            </select>
+            </div>
+        </div>
+        <br>
+        <div id="map" style="height: 400px"></div>
+    </div>
+    <script src="./js/map_musei.js"></script>
+  </body>
+</html>

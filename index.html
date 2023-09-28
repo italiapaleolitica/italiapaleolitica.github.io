@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Italia Paleolitica</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      .header-section {
+        background-image: url("img/header.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+      }
+      .navbar {
+        background-color: #9b5540 !important;
+      }
+      .musei {
+        background-image: url("img/musei.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+      }
+      .siti {
+        background-image: url("img/siti.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+      }
+      .siti:hover {
+        background-image: url("img/siti.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0.5;
+        margin: 20px;
+      }
+      .musei:hover {
+        background-image: url("img/musei.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0.5;
+        margin: 20px;
+      }
+      .musei {
+        position: relative;
+      }
+      .siti {
+        position: relative;
+      }
+
+      a.musei_link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      a.siti_link {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      /* media query */
+      @media (max-width: 768px) {
+        .header-section {
+          background-image: url("img/header.jpeg");
+          background-size: cover;
+          background-position: center;
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-section text-white">
+      <div class="container"></div>
+    </header>
+    <nav class="navbar navbar-expand-lg bg-secondary">
+      <div class="container">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./progetto">Progetto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./cronologia">Cronologia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./paleolitico">Il paleolitico in Italia</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container py-5">
+      <div class="row">
+          <div class="col-md-6">
+            <div class="musei">
+              <a href="./musei" class="musei_link"></a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="siti">
+              <a href="./siti"  class="siti_link"></a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
