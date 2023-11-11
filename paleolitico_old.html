@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Il paleolitico in Italia</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./json/musei/musei.js"></script>
+    <style>
+      .header-section {
+        background-image: url("img/header.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+      }
+      .navbar {
+        background-color: #9b5540 !important;
+      }
+      .musei {
+        background-image: url("img/musei.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+      }
+      .siti {
+        background-image: url("img/siti.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+      }
+      .siti:hover {
+        background-image: url("img/siti.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0.5;
+        margin: 20px;
+      }
+      .musei:hover {
+        background-image: url("img/musei.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+        opacity: 0.5;
+        margin: 20px;
+      }
+      /* media query */
+      @media (max-width: 768px) {
+        .header-section {
+          background-image: url("img/header.jpeg");
+          background-size: cover;
+          background-position: center;
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-section text-white">
+      <div class="container"></div>
+    </header>
+    <nav class="navbar navbar-expand-lg bg-secondary">
+      <div class="container">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./progetto">Progetto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./cronologia">Cronologia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="./paleolitico">Il paleolitico in Italia</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container py-5">
+      <p><span style="font-size:11pt;">Prima di avventurarci nel Paleolitico italiano facciamo una breve premessa cronologica.&nbsp;</span></p>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Il Paleolitico si inserisce all&rsquo;interno del Quaternario che &egrave; il terzo periodo dell&rsquo;era geologica Cenozoico.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Esso si divide in due epoche: Pleistocene e Olocene (con questa epoca termina il Paleolitico e inizia il Mesolitico)&nbsp;</span></p>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Il Pleistocene si suddivide in:&nbsp;</span></p>
+      <p><span style="font-size:11pt;">- antico: 2,58 - 0,78 milioni di anni fa&nbsp;</span></p>
+      <p><span style="font-size:11pt;">- medio: 780 - 125 mila anni fa</span></p>
+      <p><span style="font-size:11pt;">- recente: 125 - 12 mila anni fa</span><span style="color:#00ff00;font-size:11pt;">&nbsp;</span><span style="color:#00ff00;font-size:11pt;"><br><br></span></p>
+      <p><span style="font-size:11pt;">Il Paleolitico abbraccia l&rsquo;arco cronologico a partire da 2.6 milioni di anni fa a circa 12 mila anni fa perci&ograve; si inserisce nella parte finale del Pleistocene inferiore, nell&rsquo;intero Pleistocene medio e recente.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Esso &egrave; cos&igrave; suddiviso:&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-paleolitico inferiore: a partire da 2.6 milioni di anni fa a 300 mila anni fa.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-paleolitico medio: a partire da 300 mila anni fa a 40 mila anni fa.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-paleolitico superiore: a partire da 40 mila anni fa a 12 mila anni, con il passaggio al Mesolitico.&nbsp;</span><span style="font-size:11pt;"><br><br></span></p>
+      <p><span style="font-size:11pt;">E&rsquo; durante il Paleolitico che avviene l&rsquo;evoluzione del genere Homo!&nbsp;</span></p>
+      <p><span style="font-size:11pt;">Conoscere il Pleistocene &egrave; per noi importante perch&eacute; le vicende del Paleolitico sono state influenzate dalle vicende di quest&rsquo;epoca.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Ruolo cruciale lo ha avuto il cambiamento climatico (circa 800-750 mila anni fa ci fu una rivoluzione climatica che diede inizio ad una serie di conseguenze dal forte impatto climatico, ambientale, geografico e demografico).&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">E&rsquo; importante per noi analizzare questi cambiamenti climatici perch&eacute; hanno portato ad un dis-equilibrio tra i periodi glaciali (diventati molto pi&ugrave; marcati) e interglaciali.&nbsp;</span><span style="font-size:11pt;"><br><br></span></p>
+      <p><span style="font-size:11pt;">La presenza di periodi glaciali pi&ugrave; marcati ha influenzato influenzato la biodiversit&agrave; intera.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Che conseguenze ha portato con s&eacute;?&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-cambiamenti geografici</span></p>
+      <p><span style="font-size:11pt;">-contrazioni demografiche</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-cambiamenti sia nella flora che nella fauna</span></p>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Dopo questa premessa, addentriamoci ora nelle tre fasi del Paleolitico:</span></p>
+      <p><br></p>
+      <ul>
+          <li style="list-style-type:disc;font-size:11pt;">
+              <p><strong><span style="font-size:11pt;">PALEOLITICO INFERIORE : 2.6 MILIONI DI ANNI FA &ndash; 300 MILA ANNI FA</span></strong><span style="font-size:11pt;">&nbsp;</span></p>
+          </li>
+      </ul>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Quali culture materiali abbiamo all&rsquo;interno di questa prima periodizzazione?&nbsp;</span></p>
+      <p><br></p>
+      <p><strong><u><span style="font-size:11pt;">Olduvaiano (o Modo 1)</span></u></strong></p>
+      <p><span style="font-size:11pt;">E&rsquo; &nbsp;il primo tecnocomplesso, gli elementi diagnostici per riconoscerlo sono:</span></p>
+      <p><span style="font-size:11pt;">-Choppers, ovvero ciottoli unifacciali&nbsp;</span></p>
+      <p><span style="font-size:11pt;">-Chopping tools, ovvero ciottoli bifacciali&nbsp;</span></p>
+      <p><span style="font-size:11pt;">-Industria su scheggia&nbsp;</span></p>
+      <p><span style="font-size:11pt;">-Strumenti in pietra dura animale&nbsp;</span></p>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Siti italiani di riferimento:&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Pirro Nord</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Monte Poggiolo&nbsp;</span></p>
+      <p><br></p>
+      <p><strong><u><span style="font-size:11pt;">Acheuleano (o Modo 2)</span></u></strong><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Gli elementi diagnostici per riconoscerlo sono:</span></p>
+      <p><span style="font-size:11pt;">-Bifacciale, strumento polifunzionale con una progettazione complessa e una continua elaborazione&nbsp;</span></p>
+      <p><span style="font-size:11pt;">-Hachereaux, un bifacciale con tranciante trasversale</span></p>
+      <p><span style="font-size:11pt;">-Industria su scheggia suddivisa in due filoni: Tayaziano (con manufatti di piccole dimensioni) e il Clactoniano (con manufatti di grandi dimensioni)</span></p>
+      <p><span style="font-size:11pt;">-Industria su osso</span></p>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Siti italiani di riferimento:</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Venosa</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Castel di Guido</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Fontana Ranuccio&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Grotta di Fumane</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Isernia la Pineta&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Notarchirico&nbsp;</span></p>
+      <p><span style="font-size:11pt;">-Grotta del Principe</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Guado San Nicola&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Sa Pedrosa</span></p>
+      <p><br></p>
+      <p><span style="font-size:11pt;">Con il Paleolitico inferiore iniziano due attivit&agrave; fondamentali per la sopravvivenza dell&rsquo;uomo: la caccia e la gestione del fuoco!&nbsp;</span></p>
+      <p><span style="font-size:11pt;">La caccia permette ai gruppi di uomini di ampliare il loro regime alimentare, sfruttando interamente la preda.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">La gestione del fuoco permette di riscaldarsi, di fare luce, di allontanare i predatori e di cuocere la carne.&nbsp;</span><span style="font-size:11pt;"><br><br></span></p>
+      <p><br></p>
+      <ul>
+          <li style="list-style-type:disc;font-size:11pt;">
+              <p><strong><span style="font-size:11pt;">PALEOLITICO MEDIO: 780-125 MILA ANNI FA</span></strong><span style="font-size:11pt;">&nbsp;</span></p>
+          </li>
+      </ul>
+      <p><span style="font-size:11pt;">Con questo periodo &nbsp;si ha la piena e totale espansione di&nbsp;</span><em><span style="font-size:11pt;">Homo neanderthalensis</span></em><span style="font-size:11pt;">, in Europa ed in Italia.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Le radici genetiche dell&rsquo;uomo di Neanderthal possono essere fatte risalire alla popolazione pre-neandertaliana europea (</span><em><span style="font-size:11pt;">Homo heidelbergensis/Homo antecessor</span></em><span style="font-size:11pt;">).</span></p>
+      <p><span style="font-size:11pt;">Quale cultura materiale abbiamo nel Paleolitico medio?&nbsp;</span></p>
+      <p><strong><u><span style="font-size:11pt;">Musteriano</span></u></strong><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Gli elementi diagnostici per riconoscerlo sono:&nbsp;</span></p>
+      <p><span style="font-size:11pt;">-Industria su scheggia Levallois&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Bifacciale, molto pi&ugrave; raffinato e declinato in molteplici forme&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Industria su osso&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Utilizzo del legno&nbsp;</span></p>
+      <p><span style="font-size:11pt;">Alcuni dei siti italiani di riferimento:&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Grotta della Ciota Ciara</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Grotta di Fumane</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Grotta del Rio Secco</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Grotta dei Santi&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Riparo dell&rsquo;Oscurusciuto&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Riparo del Molare</span></p>
+      <p><span style="font-size:11pt;">Nel Paleolitico medio continua la caccia, che si specializza sempre pi&ugrave;, e inizia anche lo sfruttamento di risorse marine.&nbsp;</span></p>
+      <p><span style="font-size:11pt;">Per quanto riguarda l&rsquo;uso di oggetti ornamentali (ad esempio conchiglie, piume, artigli di aquile) e la rappresentazione di segni grafici, il dibattito &egrave; ancora aperto.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Alcuni studiosi sostengono che l&rsquo;uomo di Neanderthal abbia introdotto questi particolari comportamenti grazie all&rsquo;incontro con Homo sapiens.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Homo sapiens vede la sua origine in Africa, ma uscendo dal continente africano ha avuto la possibilit&agrave; di incontrare le altre forme umane presenti sul suo cammino.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Facendo ci&ograve; &egrave; possibile che abbia trasmesso parte del suo comportamento moderno.</span></p>
+      <p><br></p>
+      <ul>
+          <li><strong>
+                  <ul>
+                      <li style="list-style-type:disc;font-size:11pt;">
+                          <p><span style="font-size:11pt;">COMPLESSI DI TRANSIZIONE&nbsp;</span></p>
+                      </li>
+                  </ul>
+              </strong></li>
+      </ul>
+      <p><span style="font-size:11pt;">Prima di passare all&rsquo;ultimo periodo del Paleolitico, ovvero il Paleolitico superiore, dobbiamo descrivere un particolare complesso di transizione che si sviluppa in Italia: l&rsquo;Uluzziano.&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Parliamo di complesso di transizione perch&eacute; il passaggio dalla fase media alla fase superiore del Paleolitico non &egrave; avvenuto in modo netto.&nbsp;</span></p>
+      <p><span style="font-size:11pt;">Gli elementi &nbsp;diagnostici per riconoscere l&rsquo;</span><strong><u><span style="font-size:11pt;">Uluzziano&nbsp;</span></u></strong><span style="font-size:11pt;">sono:&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Semiluna, un piccolo strumento a dorso di forma geometrica&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Pezzi scagliati&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Grattatoi&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Industria su osso</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">-Utilizzo di conchiglie&nbsp;</span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;"><br></span><span style="font-size:11pt;">Siti italiani di riferimento:&nbsp;</span><span style="font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Grotta di Fumane,</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Castelcivita</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Grotta del Cavallo</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Colle Rotondo</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Grotta la Fabbrica</span></p>
+      <p><br></p>
+      <ul>
+          <li style="list-style-type:disc;color:#212121;font-size:11pt;">
+              <p><strong><span style="color:#212121;background-color:#ffffff;font-size:11pt;">PALEOLITICO SUPERIORE: 40 MILA ANNI FA &ndash; 12 MILA ANNI FA</span></strong><span style="color:#212121;background-color:#ffffff;font-size:11pt;">&nbsp;</span></p>
+          </li>
+      </ul>
+      <p><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Quali culture abbiamo nel Paleolitico superiore?&nbsp;</span></p>
+      <p><strong><u><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Aurignaziano</span></u></strong><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Gli elementi diagnostici per riconoscerlo sono:</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Lamelle</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Punte Dufour&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Grattatoi su lama e carenati&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Bulini</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Industria su osso (zagaglie)&nbsp;</span></p>
+      <p><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Siti italiani di riferimento:&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta di Fumane</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Mochi</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Tagliente</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta la Fabbrica</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta di Castelcivita</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta Paglicci.</span></p>
+      <p><br></p>
+      <p><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Con il Paleolitico superiore si assiste all&rsquo;estinzione, in Europa ed in Italia, dell&rsquo;uomo di Neanderthal.&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Unica forma umana rimane Sapiens che porta con s&eacute; il proprio bagaglio culturale costituito da comportamenti ormai totalmente moderni.&nbsp;</span></p>
+      <p><span style="color:#212121;background-color:#ffffff;font-size:11pt;">In questo periodo si ha l&rsquo;esplosione dell&rsquo;arte, sia parietale che mobiliare; i temi principali sono il mondo della caccia e il mondo animale.&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Aumenta il numero di oggetti ornamentali utilizzati da Sapiens, che troviamo anche nei corredi funerari all&rsquo;interno delle sepolture (ad esempio&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;">Grotta dei Fanciulli in Liguria).&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><strong><u><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Gravettiano</span></u></strong><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">Gli elementi diagnostici per riconoscerlo sono:&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Punte e lame a dorso che prendono il nome di Gravette e Microgravette&nbsp;</span><span style="color:#212121;background-color:#ffffff;font-size:11pt;"><br></span><span style="color:#212121;background-color:#ffffff;font-size:11pt;">-Flechettes,&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;">bipunte a forma di foglia</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Bulini Noailles&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Propulsore e arco come strumento aggiuntivo per la caccia, soprattutto negli spazi aperti&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Strumenti su osso&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">Siti italiani di riferimento:&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Bilancino</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Mochi</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta Paglicci&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta del Romito&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Caverna delle Arene Candide&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta dell&rsquo;Addaura&nbsp;</span></p>
+      <p><strong><u><span style="background-color:#ffffff;font-size:11pt;">Epigravettiano:&nbsp;</span></u></strong><strong><u><span style="background-color:#ffffff;font-size:11pt;"><br></span></u></strong><span style="background-color:#ffffff;font-size:11pt;">Gli elementi diagnostici per riconoscerlo sono:&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Lamelle</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Lame slanciate</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grattatoi frontali su lama</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Coltelli</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Strumenti a dorso con&nbsp;</span><em><span style="background-color:#ffffff;font-size:11pt;">cran</span></em><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Foliati</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">Siti italiani di riferimento:&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Tagliente</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta Clusentin&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Dalmeri</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Villabruna&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Riparo Fedrian&nbsp;</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta di Pozzo</span><span style="background-color:#ffffff;font-size:11pt;"><br></span><span style="background-color:#ffffff;font-size:11pt;">-Grotta del Palermitano&nbsp;</span></p>
+      <p><span style="background-color:#ffffff;font-size:11pt;">Per tutto il Gravettiano ed Epigravettiano continuano le manifestazioni simboliche legate all&rsquo;arte, alle sepolture e all&rsquo;utilizzo di oggetti ornamentali.&nbsp;</span></p>
+      <p><span style="background-color:#ffffff;font-size:11pt;">La caccia &egrave; ormai specializzata, ed &egrave; proprio con gli ultimi cacciatori epigravettiani che chiudiamo il capitolo del Paleolitico per lasciar spazio al Mesolitico.&nbsp;</span></p>
+      <p><span style="background-color:#ffffff;font-size:11pt;">Grazie per aver seguito con noi questo viaggio durato pi&ugrave; di due milioni di anni!&nbsp;</span></p>
+      <p><br></p>
+      <p><br></p>
+      <p><br></p>
+    </div>
+  </body>
+</html>
